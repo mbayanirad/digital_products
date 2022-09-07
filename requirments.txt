@@ -4,3 +4,6 @@ djangorestframework==3.13.1
 
 #shell
 ipython==8.5.0
+
+# Photo & Image
+Pillow==9.2.0
