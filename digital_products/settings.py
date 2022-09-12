@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-
+from pickle import TRUE
+from .local_settings import *
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,9 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xnjq%)b!z@=tn0-#dfa6#wt4u2w*28w+j^!h4-kwd68pu8_hqe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -39,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'products'
+    'products',
+    'users',
+
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Authorization
+AUTH_USER_MODEL = 'users.User'
